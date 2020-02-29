@@ -3,7 +3,7 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent {
-            label 'dev'  //deploy on dev server
+            label 'centos_dev'  //deploy on dev server
          }
     triggers {pollSCM('* * * * *')}
        options {
@@ -11,13 +11,13 @@ pipeline {
                timestamps()
        }
     stages {
-              stage("checkout") {
+          /*    stage("checkout") {
                        steps {
                                echo "=========== Begin Update NPM version ==========="
                                sh 'sudo npm install -g npm@latest'
                                echo "=========== End Update NPM version ==========="
                        }
-               } 
+               } */ 
                stage("install-deps") {
                       steps {
                                echo "=========== Begin Install dependencies ==========="
