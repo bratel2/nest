@@ -3,7 +3,7 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent {
-            label 'prod'  //deploy on dev server
+            label 'prod'  
          }
     triggers {pollSCM('* * * * *')}
        options {
@@ -25,7 +25,6 @@ pipeline {
                                echo "=========== End Install dependencies ==========="
                        }
                } 
-
                stage("build-packages") {
                       steps {
                                echo "=========== Begin Build ==========="
@@ -40,13 +39,6 @@ pipeline {
                                echo "=========== End Test ==========="
                        }
                }    
-               stage("run-integration-unit-tests") {
-                      steps {
-                               echo "=========== Begin Integration Test ==========="
-                               sh 'npm run integration-test'
-                               echo "=========== End Integration Test ==========="
-                       }
-               } 
       } 
  }
 
