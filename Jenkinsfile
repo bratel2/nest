@@ -40,7 +40,7 @@ pipeline {
                                echo "=========== End Test ==========="
                        }
                }    
-               stage("run-unit-tests") {
+               stage("run-integration-unit-tests") {
                       steps {
                                echo "=========== Begin Integration Test ==========="
                                sh 'npm run integration-test'
