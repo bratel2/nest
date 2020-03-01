@@ -39,6 +39,14 @@ pipeline {
                                sh 'npm run test'
                                echo "=========== End Test ==========="
                        }
-               }        
+               }    
+               stage("run-unit-tests") {
+                      steps {
+                               echo "=========== Begin Integration Test ==========="
+                               sh 'npm run integration-test'
+                               echo "=========== End Integration Test ==========="
+                       }
+               } 
       } 
  }
+
