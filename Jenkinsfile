@@ -10,7 +10,7 @@ pipeline {
                buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10')) 
                timestamps()
                timeout(time: 1, unit: 'HOURS')
-               ansiColor('xterm')
+  //             ansiColor('xterm')
        }
     stages {
               stage("checkout") {
