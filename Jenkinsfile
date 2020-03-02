@@ -3,7 +3,7 @@ properties([disableConcurrentBuilds()])
 
 pipeline {
     agent {
-            label 'prod'  //deploy on dev server
+            label 'dev'  //deploy on dev server
          }
     triggers {pollSCM('* * * * *')}
        options {
